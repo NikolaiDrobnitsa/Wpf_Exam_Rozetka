@@ -1,0 +1,93 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\acer.png" />
+    <None Remove="Resources\acer_enable.png" />
+    <None Remove="Resources\aksessuari-dlia-elektronyky.png" />
+    <None Remove="Resources\apple.png" />
+    <None Remove="Resources\apples.png" />
+    <None Remove="Resources\asus.png" />
+    <None Remove="Resources\asus_enabled.png" />
+    <None Remove="Resources\canon.png" />
+    <None Remove="Resources\canon_enable.png" />
+    <None Remove="Resources\dell.png" />
+    <None Remove="Resources\dell_enable.png" />
+    <None Remove="Resources\hp.png" />
+    <None Remove="Resources\hp_enable.png" />
+    <None Remove="Resources\kabeli-i-perekhodniki.png" />
+    <None Remove="Resources\klaviatury-i-myshi.png" />
+    <None Remove="Resources\kompyuternye-komplektuyushchie.png" />
+    <None Remove="Resources\kompyutery.png" />
+    <None Remove="Resources\lenovo.png" />
+    <None Remove="Resources\lenovo_ebnable.png" />
+    <None Remove="Resources\Logitec.PNG" />
+    <None Remove="Resources\logitech.jpg" />
+    <None Remove="Resources\Logitec_enabled.png" />
+    <None Remove="Resources\logo_1.jpg" />
+    <None Remove="Resources\logo_2.jpg" />
+    <None Remove="Resources\logo_3.jpg" />
+    <None Remove="Resources\logo_4.jpg" />
+    <None Remove="Resources\logo_5.jpg" />
+    <None Remove="Resources\logo_6.jpg" />
+    <None Remove="Resources\monitory.png" />
+    <None Remove="Resources\naushniki-i-aksessuary.png" />
+    <None Remove="Resources\noutbuki.png" />
+    <None Remove="Resources\ofisnaya-tekhnika.png" />
+    <None Remove="Resources\planshety.png" />
+    <None Remove="Resources\samsung.png" />
+    <None Remove="Resources\samsung_enable.png" />
+    <None Remove="Resources\setevoe-oborudovanie.png" />
+    <None Remove="Resources\tovary-dlya-gejmerov.png" />
+    <None Remove="Resources\tp-link.png" />
+    <None Remove="Resources\tp-link_enable.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\acer.png" />
+    <Resource Include="Resources\acer_enable.png" />
+    <Resource Include="Resources\aksessuari-dlia-elektronyky.png" />
+    <Resource Include="Resources\apple.png" />
+    <Resource Include="Resources\apples.png" />
+    <Resource Include="Resources\asus.png" />
+    <Resource Include="Resources\asus_enabled.png" />
+    <Resource Include="Resources\canon.png" />
+    <Resource Include="Resources\canon_enable.png" />
+    <Resource Include="Resources\dell.png" />
+    <Resource Include="Resources\dell_enable.png" />
+    <Resource Include="Resources\hp.png" />
+    <Resource Include="Resources\hp_enable.png" />
+    <Resource Include="Resources\kabeli-i-perekhodniki.png" />
+    <Resource Include="Resources\klaviatury-i-myshi.png" />
+    <Resource Include="Resources\kompyuternye-komplektuyushchie.png" />
+    <Resource Include="Resources\kompyutery.png" />
+    <Resource Include="Resources\lenovo.png" />
+    <Resource Include="Resources\lenovo_ebnable.png" />
+    <Resource Include="Resources\Logitec.PNG" />
+    <Resource Include="Resources\logitech.jpg" />
+    <Resource Include="Resources\Logitec_enabled.png" />
+    <Resource Include="Resources\logo_1.jpg" />
+    <Resource Include="Resources\logo_2.jpg" />
+    <Resource Include="Resources\logo_3.jpg" />
+    <Resource Include="Resources\logo_4.jpg" />
+    <Resource Include="Resources\logo_5.jpg" />
+    <Resource Include="Resources\logo_6.jpg" />
+    <Resource Include="Resources\monitory.png" />
+    <Resource Include="Resources\naushniki-i-aksessuary.png" />
+    <Resource Include="Resources\noutbuki.png" />
+    <Resource Include="Resources\ofisnaya-tekhnika.png" />
+    <Resource Include="Resources\planshety.png" />
+    <Resource Include="Resources\samsung.png" />
+    <Resource Include="Resources\samsung_enable.png" />
+    <Resource Include="Resources\setevoe-oborudovanie.png" />
+    <Resource Include="Resources\tovary-dlya-gejmerov.png" />
+    <Resource Include="Resources\tp-link.png" />
+    <Resource Include="Resources\tp-link_enable.png" />
+  </ItemGroup>
+
+</Project>

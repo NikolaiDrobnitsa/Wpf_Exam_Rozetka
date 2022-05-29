@@ -1,0 +1,504 @@
+﻿<Window x:Class="Wpf_Exam.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_Exam"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1080" Width="1920">
+    <Window.Resources>
+        <ResourceDictionary Source="Dictionary.xaml" />
+    </Window.Resources>
+    <ScrollViewer>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="8*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <TextBlock FontSize="38">Комьютеры и ноутбуки</TextBlock>
+                </Grid>
+                <!--<Grid Grid.Row="1">
+
+                <Image Source="/Resources/logo_3.jpg" x:Name="First_Title_img" Style="{StaticResource Title_IMG_Style}">
+                    <Image.OpacityMask>
+                        <VisualBrush Visual="{Binding ElementName=Mask}"/>
+                    </Image.OpacityMask>
+                </Image>
+            </Grid>-->
+                <Grid Grid.Row="1">
+                    <StackPanel Orientation="Horizontal">
+                        <RadioButton x:Name="img1" Content="Img1" />
+                        <RadioButton x:Name="img2" Content="Img2" IsChecked="True"/>
+                    </StackPanel>
+                    <Image Grid.Column="1" MaxHeight="400" MaxWidth="1270">
+
+                        <Image.Style>
+                            <Style TargetType="Image" >
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsChecked, ElementName=img1}" Value="True" >
+                                        <Setter Property="Source" Value="Resources/logo_5.jpg"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding IsChecked, ElementName=img2}" Value="True">
+                                        <Setter Property="Source" Value="Resources/logo_6.jpg"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <!--<Image Source="Resources/apple.png" MaxHeight="48" MaxWidth="126"></Image>-->
+                        <Image MaxHeight="48" MaxWidth="126" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <Image.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" Value="Resources/apples.png"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Source" Value="Resources/apple.png"/>
+
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </Grid>
+                    <Grid Grid.Column="1" Width="126">
+
+                        <Image MaxHeight="48" MaxWidth="126" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <Image.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" Value="Resources/asus_enabled.png"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Source" Value="Resources/asus.png"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </Grid>
+                    <Grid Grid.Column="2">
+
+                        <Image MaxHeight="48" MaxWidth="126" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <Image.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" Value="Resources/hp_enable.png"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Source" Value="Resources/hp.png"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </Grid>
+                    <Grid Grid.Column="3" Width="160">
+                        <Image MaxHeight="48" MaxWidth="126" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <Image.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" Value="Resources/acer_enable.png"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Source" Value="Resources/acer.png"/>
+
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </Grid>
+                    <Grid Grid.Column="4" Width="160">
+                        <Image MaxHeight="48" MaxWidth="126" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <Image.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" Value="Resources/lenovo_ebnable.png"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Source" Value="Resources/lenovo.png"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </Grid>
+                    <Grid Grid.Column="5" Width="160">
+                        <Image MaxHeight="48" MaxWidth="126" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <Image.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" Value="Resources/samsung_enable.png"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Source" Value="Resources/samsung.png"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </Grid>
+                    <Grid Grid.Column="6" Width="150">
+
+                        <Image MaxHeight="48" MaxWidth="126" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <Image.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" Value="Resources/dell_enable.png"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Source" Value="Resources/dell.png"/>
+
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </Grid>
+                    <Grid Grid.Column="7" Width="150">
+                        <!--<Image Source="Resources/canon.png" MaxHeight="48" MaxWidth="126" ></Image>-->
+                        <Image MaxHeight="48" MaxWidth="126" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <Image.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" Value="Resources/canon_enable.png"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Source" Value="Resources/canon.png"/>
+
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </Grid>
+                    <Grid Grid.Column="8" Width="150">
+                        <!--<Image Source="Resources/tp-link.png" MaxHeight="48" MaxWidth="126" ></Image>-->
+                        <Image MaxHeight="48" MaxWidth="126" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <Image.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" Value="Resources/tp-link_enable.png"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Source" Value="Resources/tp-link.png"/>
+
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </Grid>
+                    <Grid Grid.Column="9" Width="150">
+                        <Image MaxHeight="48" MaxWidth="126" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <Image.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" Value="Resources/Logitec_enabled.png"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Source" Value="Resources/Logitec.png"/>
+
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" >
+                        <Image Source="Resources/noutbuki.png" Margin="10"></Image>
+                        <TextBlock Text="Ноутбуки" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Foreground" Value="Red"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Foreground" Value="Green"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="1" >
+                        <Image Source="Resources/kompyutery.png" Margin="10"></Image>
+                        <TextBlock Text="Компьютеры" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Foreground" Value="Red"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Foreground" Value="Green"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="2" >
+                        <Image Source="Resources/monitory.png" Margin="10"></Image>
+                        <TextBlock Text="Мониторы" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Foreground" Value="Red"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Foreground" Value="Green"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="3" Margin="10">
+                        <Image Source="Resources/tovary-dlya-gejmerov.png" ></Image>
+                        <TextBlock Text="Gaming" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Foreground" Value="Red"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Foreground" Value="Green"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="4" Margin="10" >
+                        <Image Source="Resources/planshety.png"></Image>
+                        <!--<TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="0,239,0,0">Ноутбуки</TextBlock>-->
+                        <TextBlock Text="Планшеты" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Foreground" Value="Red"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Foreground" Value="Green"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="5" Margin="10">
+                        <Image Source="Resources/kabeli-i-perekhodniki.png"></Image>
+                        <TextBlock Text="Кабели и переходники" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" FontSize="20" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Foreground" Value="Red"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Foreground" Value="Green"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" >
+                        <Image Source="Resources/kompyuternye-komplektuyushchie.png" Margin="10"></Image>
+                        <TextBlock Text="Компьютерные комплектующие" TextWrapping="Wrap" Background="Gray" Margin="0,239,0,0" MaxHeight="52" FontSize="20" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Foreground" Value="Red"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Foreground" Value="Green"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="1" >
+                        <Image Source="Resources/setevoe-oborudovanie.png" Margin="10"></Image>
+                        <TextBlock Text="Сетевое оборудование" Background="Gray" Margin="0,239,0,0" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Foreground" Value="Red"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Foreground" Value="Green"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="2" >
+                        <Image Source="Resources/naushniki-i-aksessuary.png" Margin="10"></Image>
+                        <TextBlock Text="Наушники и аксессуары" Background="Gray" Margin="0,239,0,0" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Foreground" Value="Red"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Foreground" Value="Green"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="3" Margin="10">
+                        <Image Source="Resources/klaviatury-i-myshi.png" ></Image>
+                        <TextBlock Text="Клавиатура и мыши" Background="Gray" Margin="0,239,0,0" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Foreground" Value="Red"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Foreground" Value="Green"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="4" Margin="10" >
+                        <Image Source="Resources/aksessuari-dlia-elektronyky.png"></Image>
+                        <!--<TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="0,239,0,0">Ноутбуки</TextBlock>-->
+                        <TextBlock Text="Аксесуары для Электроники" TextWrapping="Wrap" Background="Gray" Margin="0,239,0,0" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Foreground" Value="Red"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Foreground" Value="Green"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="5" Margin="10">
+                        <Image Source="Resources/ofisnaya-tekhnika.png"></Image>
+                        <TextBlock Text="Оргтехника" Background="Gray" Margin="0,239,0,0" FontSize="22" MaxHeight="32" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Foreground" Value="Red"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Foreground" Value="Green"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+
+
+                </Grid>
+
+            </Grid>
+
+
+
+
+        </Grid>
+    </ScrollViewer>
+</Window>
