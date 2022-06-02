@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_Exam"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1080" Width="1920">
+        Title="MainWindow" Height="1080" Width="1920" Loaded="Window_Loaded">
     <Window.Resources>
         <ResourceDictionary Source="Dictionary.xaml" />
     </Window.Resources>
@@ -18,48 +18,61 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
+                    <RowDefinition ></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition ></RowDefinition>
                     <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
+                <Grid Grid.Row="0" Margin="0,0,0,10">
                     <TextBlock FontSize="38">Комьютеры и ноутбуки</TextBlock>
                 </Grid>
-                <!--<Grid Grid.Row="1">
-
-                <Image Source="/Resources/logo_3.jpg" x:Name="First_Title_img" Style="{StaticResource Title_IMG_Style}">
-                    <Image.OpacityMask>
-                        <VisualBrush Visual="{Binding ElementName=Mask}"/>
-                    </Image.OpacityMask>
-                </Image>
-            </Grid>-->
                 <Grid Grid.Row="1">
-                    <StackPanel Orientation="Horizontal">
-                        <RadioButton x:Name="img1" Content="Img1" />
-                        <RadioButton x:Name="img2" Content="Img2" IsChecked="True"/>
-                    </StackPanel>
                     <Image Grid.Column="1" MaxHeight="400" MaxWidth="1270">
 
                         <Image.Style>
                             <Style TargetType="Image" >
                                 <Style.Triggers>
                                     <DataTrigger Binding="{Binding IsChecked, ElementName=img1}" Value="True" >
-                                        <Setter Property="Source" Value="Resources/logo_5.jpg"/>
+                                        <Setter Property="Source" Value="Resources/logo_1.jpg"/>
                                     </DataTrigger>
                                     <DataTrigger Binding="{Binding IsChecked, ElementName=img2}" Value="True">
+                                        <Setter Property="Source" Value="Resources/logo_2.jpg"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding IsChecked, ElementName=img3}" Value="True">
+                                        <Setter Property="Source" Value="Resources/logo_3.jpg"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding IsChecked, ElementName=img4}" Value="True">
+                                        <Setter Property="Source" Value="Resources/logo_4.jpg"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding IsChecked, ElementName=img5}" Value="True">
+                                        <Setter Property="Source" Value="Resources/logo_5.jpg"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding IsChecked, ElementName=img6}" Value="True">
                                         <Setter Property="Source" Value="Resources/logo_6.jpg"/>
                                     </DataTrigger>
                                 </Style.Triggers>
                             </Style>
                         </Image.Style>
                     </Image>
+                    
                 </Grid>
-                <Grid Grid.Row="2">
+                <Grid Grid.Row="2" Margin="-30,30,10,30">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <RadioButton x:Name="img1" IsChecked="True" MaxHeight="20"/>
+                        <RadioButton x:Name="img2" MaxHeight="20"/>
+                        <RadioButton x:Name="img3" MaxHeight="20"/>
+                        <RadioButton x:Name="img4" MaxHeight="20"/>
+                        <RadioButton x:Name="img5" MaxHeight="20"/>
+                        <RadioButton x:Name="img6" MaxHeight="20"/>
+
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="3">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"></ColumnDefinition>
                         <ColumnDefinition Width="auto"></ColumnDefinition>
@@ -199,7 +212,7 @@
                         </Image>
                     </Grid>
                     <Grid Grid.Column="7" Width="150">
-                        <!--<Image Source="Resources/canon.png" MaxHeight="48" MaxWidth="126" ></Image>-->
+
                         <Image MaxHeight="48" MaxWidth="126" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <Image.Style>
@@ -218,7 +231,7 @@
                         </Image>
                     </Grid>
                     <Grid Grid.Column="8" Width="150">
-                        <!--<Image Source="Resources/tp-link.png" MaxHeight="48" MaxWidth="126" ></Image>-->
+
                         <Image MaxHeight="48" MaxWidth="126" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <Image.Style>
@@ -255,7 +268,7 @@
                         </Image>
                     </Grid>
                 </Grid>
-                <Grid Grid.Row="3">
+                <Grid Grid.Row="4">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
@@ -266,7 +279,7 @@
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0" >
                         <Image Source="Resources/noutbuki.png" Margin="10"></Image>
-                        <TextBlock Text="Ноутбуки" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                        <TextBlock Text="Ноутбуки"  Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
@@ -285,7 +298,7 @@
                     </Grid>
                     <Grid Grid.Column="1" >
                         <Image Source="Resources/kompyutery.png" Margin="10"></Image>
-                        <TextBlock Text="Компьютеры" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                        <TextBlock Text="Компьютеры"  Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
@@ -304,7 +317,7 @@
                     </Grid>
                     <Grid Grid.Column="2" >
                         <Image Source="Resources/monitory.png" Margin="10"></Image>
-                        <TextBlock Text="Мониторы" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                        <TextBlock Text="Мониторы"  Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
@@ -323,7 +336,7 @@
                     </Grid>
                     <Grid Grid.Column="3" Margin="10">
                         <Image Source="Resources/tovary-dlya-gejmerov.png" ></Image>
-                        <TextBlock Text="Gaming" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                        <TextBlock Text="Gaming"  Margin="0,239,0,0" HorizontalAlignment="Center" FontSize="22" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
@@ -343,7 +356,7 @@
                     <Grid Grid.Column="4" Margin="10" >
                         <Image Source="Resources/planshety.png"></Image>
                         <!--<TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="0,239,0,0">Ноутбуки</TextBlock>-->
-                        <TextBlock Text="Планшеты" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                        <TextBlock Text="Планшеты"  Margin="0,239,0,0" HorizontalAlignment="Center" FontSize="22" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
@@ -362,7 +375,7 @@
                     </Grid>
                     <Grid Grid.Column="5" Margin="10">
                         <Image Source="Resources/kabeli-i-perekhodniki.png"></Image>
-                        <TextBlock Text="Кабели и переходники" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" FontSize="20" Visibility = "{Binding FileOkVisible}"
+                        <TextBlock Text="Кабели и переходники"  Margin="0,239,0,0" HorizontalAlignment="Center" FontSize="20" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
@@ -380,7 +393,7 @@
                         </TextBlock>
                     </Grid>
                 </Grid>
-                <Grid Grid.Row="4">
+                <Grid Grid.Row="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
@@ -403,170 +416,170 @@
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
                         <Grid Grid.Row="0">
-                        <Image Source="Resources/kompyuternye-komplektuyushchie.png" Margin="10,50,10,10"></Image>
+                            <Image Source="Resources/kompyuternye-komplektuyushchie.png" Margin="10,50,10,10"></Image>
                         </Grid>
                         <Grid Grid.Row="1">
-                        <TextBlock Text="Компьютерные комплектующие" Margin="0,0,100,10" TextWrapping="Wrap" Background="Gray" MaxHeight="52" FontSize="20" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Компьютерные комплектующие" Margin="0,0,100,10" TextWrapping="Wrap"  MaxHeight="52" FontSize="20" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
-                            <TextBlock.Style>
-                                <Style TargetType="{x:Type TextBlock}">
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Foreground" Value="Red"/>
-                                            <Setter Property="TextDecorations" Value="Underline"/>
-                                        </Trigger>
-                                        <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Foreground" Value="#5f9ecb"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </TextBlock.Style>
-                        </TextBlock>
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Foreground" Value="Red"/>
+                                                <Setter Property="TextDecorations" Value="Underline"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Foreground" Value="#5f9ecb"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
                         </Grid>
                         <Grid Grid.Row="2">
-                            <TextBlock Text="SSD" Background="Gray" Margin="0,0,220,10"  MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="SSD" Margin="0,0,220,10"  MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
-                            <TextBlock.Style>
-                                <Style TargetType="{x:Type TextBlock}">
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Foreground" Value="Red"/>
-                                            <Setter Property="TextDecorations" Value="Underline"/>
-                                        </Trigger>
-                                        <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Foreground" Value="#5f9ecb"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </TextBlock.Style>
-                        </TextBlock>
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Foreground" Value="Red"/>
+                                                <Setter Property="TextDecorations" Value="Underline"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Foreground" Value="#5f9ecb"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
                         </Grid>
                         <Grid Grid.Row="3">
-                            <TextBlock Text="Системы охлаждения" Background="Gray" Margin="0,0,70,10" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Системы охлаждения" Margin="0,0,70,10" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
-                            <TextBlock.Style>
-                                <Style TargetType="{x:Type TextBlock}">
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Foreground" Value="Red"/>
-                                            <Setter Property="TextDecorations" Value="Underline"/>
-                                        </Trigger>
-                                        <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Foreground" Value="#5f9ecb"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </TextBlock.Style>
-                        </TextBlock>
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Foreground" Value="Red"/>
+                                                <Setter Property="TextDecorations" Value="Underline"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Foreground" Value="#5f9ecb"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
                         </Grid>
                         <Grid Grid.Row="4">
-                            <TextBlock Text="Видеокарты" Background="Gray" Margin="0,0,150,10"  MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Видеокарты"  Margin="0,0,150,10"  MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
-                            <TextBlock.Style>
-                                <Style TargetType="{x:Type TextBlock}">
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Foreground" Value="Red"/>
-                                            <Setter Property="TextDecorations" Value="Underline"/>
-                                        </Trigger>
-                                        <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Foreground" Value="#5f9ecb"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </TextBlock.Style>
-                        </TextBlock>
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Foreground" Value="Red"/>
+                                                <Setter Property="TextDecorations" Value="Underline"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Foreground" Value="#5f9ecb"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
                         </Grid>
                         <Grid Grid.Row="5">
-                        <TextBlock Text="Оперативная память" Background="Gray" Margin="0,0,80,10" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Оперативная память"  Margin="0,0,80,10" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
-                            <TextBlock.Style>
-                                <Style TargetType="{x:Type TextBlock}">
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Foreground" Value="Red"/>
-                                            <Setter Property="TextDecorations" Value="Underline"/>
-                                        </Trigger>
-                                        <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Foreground" Value="#5f9ecb"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </TextBlock.Style>
-                        </TextBlock>
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Foreground" Value="Red"/>
+                                                <Setter Property="TextDecorations" Value="Underline"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Foreground" Value="#5f9ecb"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
                         </Grid>
                         <Grid Grid.Row="6">
-                        <TextBlock Text="Процессоры" Background="Gray" Margin="0,0,145,10" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Процессоры"  Margin="0,0,145,10" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
-                            <TextBlock.Style>
-                                <Style TargetType="{x:Type TextBlock}">
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Foreground" Value="Red"/>
-                                            <Setter Property="TextDecorations" Value="Underline"/>
-                                        </Trigger>
-                                        <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Foreground" Value="#5f9ecb"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </TextBlock.Style>
-                        </TextBlock>
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Foreground" Value="Red"/>
+                                                <Setter Property="TextDecorations" Value="Underline"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Foreground" Value="#5f9ecb"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
                         </Grid>
                         <Grid Grid.Row="7">
-                        <TextBlock Text="Материнские платы" Background="Gray" Margin="0,0,85,10" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Материнские платы"  Margin="0,0,85,10" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
-                            <TextBlock.Style>
-                                <Style TargetType="{x:Type TextBlock}">
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Foreground" Value="Red"/>
-                                            <Setter Property="TextDecorations" Value="Underline"/>
-                                        </Trigger>
-                                        <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Foreground" Value="#5f9ecb"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </TextBlock.Style>
-                        </TextBlock>
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Foreground" Value="Red"/>
+                                                <Setter Property="TextDecorations" Value="Underline"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Foreground" Value="#5f9ecb"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
                         </Grid>
                         <Grid Grid.Row="8">
-                        <TextBlock Text="Жесткие диски и дисковые массивы" Background="Gray" TextWrapping="Wrap" Margin="0,0,30,10" MaxHeight="50" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Жесткие диски и дисковые массивы"  TextWrapping="Wrap" Margin="0,0,30,10" MaxHeight="50" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
-                            <TextBlock.Style>
-                                <Style TargetType="{x:Type TextBlock}">
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Foreground" Value="Red"/>
-                                            <Setter Property="TextDecorations" Value="Underline"/>
-                                        </Trigger>
-                                        <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Foreground" Value="#5f9ecb"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </TextBlock.Style>
-                        </TextBlock>
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Foreground" Value="Red"/>
+                                                <Setter Property="TextDecorations" Value="Underline"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Foreground" Value="#5f9ecb"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
                         </Grid>
                         <Grid Grid.Row="9">
-                        <TextBlock Text="Блок питания" Background="Gray" Margin="0,0,140,10" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Блок питания"  Margin="0,0,140,10" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
-                            <TextBlock.Style>
-                                <Style TargetType="{x:Type TextBlock}">
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Foreground" Value="Red"/>
-                                            <Setter Property="TextDecorations" Value="Underline"/>
-                                        </Trigger>
-                                        <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Foreground" Value="#5f9ecb"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </TextBlock.Style>
-                        </TextBlock>
-                    </Grid>
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Foreground" Value="Red"/>
+                                                <Setter Property="TextDecorations" Value="Underline"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Foreground" Value="#5f9ecb"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
                     </Grid>
                     <Grid Grid.Column="1" >
                         <Grid.RowDefinitions>
@@ -584,7 +597,7 @@
                             <Image Source="Resources/setevoe-oborudovanie.png" Margin="10,50,10,10"></Image>
                         </Grid>
                         <Grid Grid.Row="1">
-                            <TextBlock Text="Сетевое оборудование" Background="Gray" Margin="0,0,15,0" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Сетевое оборудование" Margin="0,0,15,0" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -602,7 +615,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="2">
-                            <TextBlock Text="Маршрутизаторы" Background="Gray" Margin="0,-5,100,0"  MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Маршрутизаторы" Margin="0,-5,100,0"  MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -620,7 +633,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="3">
-                            <TextBlock Text="Комутаторы" Background="Gray"  Margin="0,-20,140,0" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Комутаторы" Margin="0,-20,140,0" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -638,7 +651,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="4">
-                            <TextBlock Text="Сетевые адаптеры" Background="Gray" Margin="0,-40,90,0"  MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Сетевые адаптеры"  Margin="0,-40,90,0"  MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -656,7 +669,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="5">
-                            <TextBlock Text="Пассивное сетевое оборудование" Background="Gray" Margin="0,-60,0,0" MaxHeight="25" FontSize="16" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Пассивное сетевое оборудование"  Margin="0,-60,0,0" MaxHeight="25" FontSize="16" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -674,7 +687,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="6">
-                            <TextBlock Text="Беспроводные точки доступа" Background="Gray" Margin="0,-80,0,0" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Беспроводные точки доступа"  Margin="0,-80,0,0" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -692,7 +705,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="7">
-                            <TextBlock Text="Ретрансляторы Wi-Fi" Background="Gray" Margin="0,-100,70,0" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Ретрансляторы Wi-Fi"  Margin="0,-100,70,0" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -710,7 +723,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="7">
-                            <TextBlock Text="Патч-корды" Background="Gray" Margin="0,-30,140,0" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Патч-корды"  Margin="0,-30,140,0" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -735,13 +748,13 @@
                             <RowDefinition Height="auto"></RowDefinition>
                             <RowDefinition Height="auto"></RowDefinition>
                             <RowDefinition Height="auto"></RowDefinition>
-                   
+
                         </Grid.RowDefinitions>
                         <Grid Grid.Row="0">
                             <Image Source="Resources/naushniki-i-aksessuary.png" Margin="10,50,10,10"></Image>
                         </Grid>
                         <Grid Grid.Row="1">
-                            <TextBlock Text="Наушники и аксессуары" Background="Gray" Margin="10,5,0,0" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Наушники и аксессуары"  Margin="10,5,0,0" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -759,7 +772,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="2">
-                            <TextBlock Text="Наушники" Background="Gray" Margin="10,10,150,0" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Наушники"  Margin="10,10,150,0" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -777,7 +790,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="3">
-                            <TextBlock Text="Усилители для наушников" Background="Gray" Margin="10,10,20,0" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Усилители для наушников"  Margin="10,10,20,0" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -795,7 +808,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="4">
-                            <TextBlock Text="Аксессуары для наушников" Background="Gray" Margin="10,10,10,0" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Аксессуары для наушников"  Margin="10,10,10,0" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -812,7 +825,7 @@
                                 </TextBlock.Style>
                             </TextBlock>
                         </Grid>
-                        
+
                     </Grid>
                     <Grid Grid.Column="3" >
                         <Grid.RowDefinitions>
@@ -828,7 +841,7 @@
                             <Image Source="Resources/klaviatury-i-myshi.png" Margin="10,50,10,10" ></Image>
                         </Grid>
                         <Grid Grid.Row="1" >
-                            <TextBlock Text="Клавиатура и мыши" Background="Gray" Margin="10,5,10,0"  FontSize="22" MaxHeight="30" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Клавиатура и мыши"  Margin="10,5,10,0"  FontSize="22" MaxHeight="30" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -846,7 +859,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="2">
-                            <TextBlock Text="Компьютерные мыши" Background="Gray" Margin="10,10,10,0" FontSize="18" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Компьютерные мыши"  Margin="10,10,10,0" FontSize="18" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -864,7 +877,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="3">
-                            <TextBlock Text="Игровые поверхности" Background="Gray" Margin="10,10,10,0" FontSize="18" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Игровые поверхности"  Margin="10,10,10,0" FontSize="18" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -882,7 +895,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="4">
-                            <TextBlock Text="Клавиатуры" Background="Gray" Margin="10,10,10,0" FontSize="18" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Клавиатуры"  Margin="10,10,10,0" FontSize="18" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -900,7 +913,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="5">
-                            <TextBlock Text="Комплект: клавиатура и мышь"  Background="Gray" Margin="10,10,10,0" FontSize="16" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Комплект: клавиатура и мышь"  Margin="10,10,10,0" FontSize="16" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -918,7 +931,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="6">
-                            <TextBlock Text="Аксессуары для клавиатур и мышек" TextWrapping="Wrap" Background="Gray" Margin="10,10,10,0" FontSize="18" MaxHeight="55" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Аксессуары для клавиатур и мышек" TextWrapping="Wrap"  Margin="10,10,10,0" FontSize="18" MaxHeight="55" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -953,25 +966,25 @@
                             <Image Source="Resources/aksessuari-dlia-elektronyky.png" Margin="10,50,10,10"></Image>
                         </Grid>
                         <Grid Grid.Row="1">
-                            <TextBlock Text="Аксесуары для Электроники" TextWrapping="Wrap" Margin="10,10,10,0" Background="Gray" FontSize="22" MaxHeight="58" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Аксесуары для Электроники" TextWrapping="Wrap" Margin="10,10,10,0"  FontSize="22" MaxHeight="58" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
-                            <TextBlock.Style>
-                                <Style TargetType="{x:Type TextBlock}">
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Foreground" Value="Red"/>
-                                            <Setter Property="TextDecorations" Value="Underline"/>
-                                        </Trigger>
-                                        <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Foreground" Value="#5f9ecb"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </TextBlock.Style>
-                        </TextBlock>
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Foreground" Value="Red"/>
+                                                <Setter Property="TextDecorations" Value="Underline"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Foreground" Value="#5f9ecb"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
                         </Grid>
                         <Grid Grid.Row="2">
-                            <TextBlock Text="Флеш память USB" Background="Gray" Margin="10,10,70,0" FontSize="18" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Флеш память USB"  Margin="10,10,70,0" FontSize="18" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -989,7 +1002,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="3">
-                            <TextBlock Text="Хабы и кардридеры" Background="Gray" Margin="10,10,50,0" FontSize="18" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Хабы и кардридеры"  Margin="10,10,50,0" FontSize="18" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -1007,7 +1020,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="4">
-                            <TextBlock Text="Аксессуары для ПК и ноутбуков" Background="Gray" Margin="10,10,0,0" FontSize="15" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Аксессуары для ПК и ноутбуков"  Margin="10,10,0,0" FontSize="15" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -1025,7 +1038,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="5">
-                            <TextBlock Text="Комплектующие для ноутбуков" Background="Gray" Margin="10,10,0,0" FontSize="15" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Комплектующие для ноутбуков"  Margin="10,10,0,0" FontSize="15" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -1043,7 +1056,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="6">
-                            <TextBlock Text="Сетевые фильтры, адаптеры и удлинители" TextWrapping="Wrap" Background="Gray" Margin="10,10,20,0" FontSize="18" MaxHeight="55" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Сетевые фильтры, адаптеры и удлинители" TextWrapping="Wrap"  Margin="10,10,20,0" FontSize="18" MaxHeight="55" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -1061,7 +1074,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="7">
-                            <TextBlock Text="Чехлы для планшетов" Background="Gray" Margin="10,10,40,0" FontSize="18" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Чехлы для планшетов"  Margin="10,10,40,0" FontSize="18" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -1079,7 +1092,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="8">
-                            <TextBlock Text="Сумки, рюкзаки и чехлы для ноутбуков" TextWrapping="Wrap" Background="Gray" Margin="10,10,20,0" FontSize="18" MaxHeight="55" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Сумки, рюкзаки и чехлы для ноутбуков" TextWrapping="Wrap"  Margin="10,10,20,0" FontSize="18" MaxHeight="55" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -1097,7 +1110,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="9">
-                            <TextBlock Text="Чистящие средства" Background="Gray" Margin="10,10,60,0" FontSize="18" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Чистящие средства"  Margin="10,10,60,0" FontSize="18" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -1132,7 +1145,7 @@
                             <Image Source="Resources/ofisnaya-tekhnika.png"  Margin="10,50,10,10"></Image>
                         </Grid>
                         <Grid Grid.Row="1">
-                            <TextBlock Text="Оргтехника" Background="Gray" Margin="10,10,10,0" FontSize="22" MaxHeight="32" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Оргтехника"  Margin="10,10,10,0" FontSize="22" MaxHeight="32" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -1150,7 +1163,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="2">
-                            <TextBlock Text="МФУ/Принтеры" Background="Gray" Margin="10,10,90,0" FontSize="18" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="МФУ/Принтеры"  Margin="10,10,90,0" FontSize="18" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -1168,7 +1181,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="3">
-                            <TextBlock Text="Сканеры" Background="Gray" Margin="10,10,150,0" FontSize="18" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Сканеры"  Margin="10,10,150,0" FontSize="18" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -1186,7 +1199,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="4">
-                            <TextBlock Text="Расходные материалы для принтеров" TextWrapping="Wrap" Background="Gray" Margin="10,10,30,0" FontSize="18" MaxHeight="55" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Расходные материалы для принтеров" TextWrapping="Wrap"  Margin="10,10,30,0" FontSize="18" MaxHeight="55" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -1204,7 +1217,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="5">
-                            <TextBlock Text="Доски, флипчарты" Background="Gray" Margin="10,10,60,0" FontSize="18" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="Доски, флипчарты"  Margin="10,10,60,0" FontSize="18" MaxHeight="25" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -1222,11 +1235,11 @@
                             </TextBlock>
                         </Grid>
                     </Grid>
-                    
+
 
 
                 </Grid>
-                <Grid Grid.Row="5">
+                <Grid Grid.Row="6">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
@@ -1237,7 +1250,7 @@
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0" >
                         <Image Source="Resources/akusticheskie-sistemy.png" Margin="10"></Image>
-                        <TextBlock Text="Акустические системы" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                        <TextBlock Text="Акустические системы"  Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
@@ -1256,7 +1269,7 @@
                     </Grid>
                     <Grid Grid.Column="1" >
                         <Image Source="Resources/programmnoe-obespechenie.png" Margin="10"></Image>
-                        <TextBlock Text="Программное обеспечение" TextWrapping="Wrap" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="55" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                        <TextBlock Text="Программное обеспечение" TextWrapping="Wrap"  Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="55" FontSize="22" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
@@ -1275,7 +1288,7 @@
                     </Grid>
                     <Grid Grid.Column="2" >
                         <Image Source="Resources/graficheskie-planshety.png" Margin="10"></Image>
-                        <TextBlock Text="Графические планшеты" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                        <TextBlock Text="Графические планшеты"  Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
@@ -1294,7 +1307,7 @@
                     </Grid>
                     <Grid Grid.Column="3" Margin="10">
                         <Image Source="Resources/mikrofony.png" ></Image>
-                        <TextBlock Text="Микрофоны" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                        <TextBlock Text="Микрофоны"  Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
@@ -1314,7 +1327,7 @@
                     <Grid Grid.Column="4" Margin="10" >
                         <Image Source="Resources/servernoe-oborudovanie.png"></Image>
                         <!--<TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="0,239,0,0">Ноутбуки</TextBlock>-->
-                        <TextBlock Text="Серверное оборудование" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="19" Visibility = "{Binding FileOkVisible}"
+                        <TextBlock Text="Серверное оборудование"  Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="19" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
@@ -1333,7 +1346,7 @@
                     </Grid>
                     <Grid Grid.Column="5" Margin="10">
                         <Image Source="Resources/interaktivnoe-oborudovanie.png"></Image>
-                        <TextBlock Text="Интерактивное оборудование" TextWrapping="Wrap" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="55" FontSize="20" Visibility = "{Binding FileOkVisible}"
+                        <TextBlock Text="Интерактивное оборудование" TextWrapping="Wrap"  Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="55" FontSize="20" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
@@ -1350,10 +1363,10 @@
                             </TextBlock.Style>
                         </TextBlock>
                     </Grid>
-                    
+
                 </Grid>
-                <Grid Grid.Row="6">
-                    
+                <Grid Grid.Row="7">
+
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
@@ -1364,10 +1377,11 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    
+
+                    <TextBlock FontSize="25" Margin="10,20,0,0" Grid.ColumnSpan="3">Популярные товары</TextBlock>
                     <Grid Grid.Column="0" >
-                        <TextBlock FontSize="25" Margin="10,20,0,0">Популярные товары</TextBlock>
-                        <Image  Visibility = "{Binding FileOkVisible}"
+
+                        <Image MaxHeight="169" MaxWidth="170" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <Image.Style>
                                 <Style TargetType="{x:Type Image}">
@@ -1383,7 +1397,7 @@
                                 </Style>
                             </Image.Style>
                         </Image>
-                        <TextBlock Text="Акустические системы" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                        <TextBlock Text="KVM-переключатель ATEN CS22U-A7 2-" TextWrapping="Wrap"  Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="55" FontSize="17" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
@@ -1393,7 +1407,7 @@
                                             <Setter Property="TextDecorations" Value="Underline"/>
                                         </Trigger>
                                         <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Foreground" Value="#5f9ecb"/>
+                                            <Setter Property="Foreground" Value="Black"/>
                                         </Trigger>
                                     </Style.Triggers>
                                 </Style>
@@ -1401,7 +1415,7 @@
                         </TextBlock>
                     </Grid>
                     <Grid Grid.Column="1" >
-                        <Image  Visibility = "{Binding FileOkVisible}"
+                        <Image MaxHeight="169" MaxWidth="170" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <Image.Style>
                                 <Style TargetType="{x:Type Image}">
@@ -1416,7 +1430,7 @@
                                 </Style>
                             </Image.Style>
                         </Image>
-                        <TextBlock Text="Программное обеспечение" TextWrapping="Wrap" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="55" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                        <TextBlock Text="Монитор 27 Dell S2722DC (210-BBRR)" TextWrapping="Wrap"  Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="55" FontSize="17" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
@@ -1426,7 +1440,7 @@
                                             <Setter Property="TextDecorations" Value="Underline"/>
                                         </Trigger>
                                         <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Foreground" Value="#5f9ecb"/>
+                                            <Setter Property="Foreground" Value="Black"/>
                                         </Trigger>
                                     </Style.Triggers>
                                 </Style>
@@ -1434,7 +1448,7 @@
                         </TextBlock>
                     </Grid>
                     <Grid Grid.Column="2" >
-                        <Image  Visibility = "{Binding FileOkVisible}"
+                        <Image MaxHeight="169" MaxWidth="170" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <Image.Style>
                                 <Style TargetType="{x:Type Image}">
@@ -1450,7 +1464,7 @@
                                 </Style>
                             </Image.Style>
                         </Image>
-                        <TextBlock Text="Графические планшеты" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                        <TextBlock Text="Компьютер ARTLINE Gaming X33 v14" TextWrapping="Wrap"  Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="55" FontSize="17" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
@@ -1460,7 +1474,7 @@
                                             <Setter Property="TextDecorations" Value="Underline"/>
                                         </Trigger>
                                         <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Foreground" Value="#5f9ecb"/>
+                                            <Setter Property="Foreground" Value="Black"/>
                                         </Trigger>
                                     </Style.Triggers>
                                 </Style>
@@ -1468,7 +1482,7 @@
                         </TextBlock>
                     </Grid>
                     <Grid Grid.Column="3" Margin="10">
-                        <Image  Visibility = "{Binding FileOkVisible}"
+                        <Image MaxHeight="169" MaxWidth="170" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <Image.Style>
                                 <Style TargetType="{x:Type Image}">
@@ -1484,7 +1498,7 @@
                                 </Style>
                             </Image.Style>
                         </Image>
-                        <TextBlock Text="Микрофоны" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="22" Visibility = "{Binding FileOkVisible}"
+                        <TextBlock Text="Компьютер Artline Gaming X51 v07" TextWrapping="Wrap"  Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="55" FontSize="17" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
@@ -1494,15 +1508,15 @@
                                             <Setter Property="TextDecorations" Value="Underline"/>
                                         </Trigger>
                                         <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Foreground" Value="#5f9ecb"/>
+                                            <Setter Property="Foreground" Value="Black"/>
                                         </Trigger>
                                     </Style.Triggers>
                                 </Style>
                             </TextBlock.Style>
                         </TextBlock>
                     </Grid>
-                    <Grid Grid.Column="4" Margin="10" >
-                        <Image  Visibility = "{Binding FileOkVisible}"
+                    <Grid Grid.Column="4"  >
+                        <Image MaxHeight="169" MaxWidth="170" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <Image.Style>
                                 <Style TargetType="{x:Type Image}">
@@ -1517,7 +1531,7 @@
                                 </Style>
                             </Image.Style>
                         </Image>
-                        <TextBlock Text="Серверное оборудование" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="32" FontSize="19" Visibility = "{Binding FileOkVisible}"
+                        <TextBlock Text="Ноутбук Acer Aspire 7 A715-42G-R0VS" TextWrapping="Wrap"  Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="55" FontSize="17" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
@@ -1527,7 +1541,7 @@
                                             <Setter Property="TextDecorations" Value="Underline"/>
                                         </Trigger>
                                         <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Foreground" Value="#5f9ecb"/>
+                                            <Setter Property="Foreground" Value="Black"/>
                                         </Trigger>
                                     </Style.Triggers>
                                 </Style>
@@ -1535,22 +1549,22 @@
                         </TextBlock>
                     </Grid>
                     <Grid Grid.Column="5" Margin="10">
-                        <Image  Visibility = "{Binding FileOkVisible}"
+                        <Image MaxHeight="169" MaxWidth="170" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <Image.Style>
                                 <Style TargetType="{x:Type Image}">
                                     <Style.Triggers>
                                         <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Source" Value="Resources/nout_acer_right.jpg"/>
+                                            <Setter Property="Source" Value="Resources/huavei_right.jpg"/>
                                         </Trigger>
                                         <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Source" Value="Resources/nout_acer.jpg"/>
+                                            <Setter Property="Source" Value="Resources/huavei_pc.jpg"/>
                                         </Trigger>
                                     </Style.Triggers>
                                 </Style>
                             </Image.Style>
                         </Image>
-                        <TextBlock Text="Интерактивное оборудование" TextWrapping="Wrap" Background="Gray" Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="55" FontSize="20" Visibility = "{Binding FileOkVisible}"
+                        <TextBlock Text="Компьютер Huawei MateStation S Windows" TextWrapping="Wrap" Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="70" FontSize="17" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
@@ -1560,7 +1574,73 @@
                                             <Setter Property="TextDecorations" Value="Underline"/>
                                         </Trigger>
                                         <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="Foreground" Value="#5f9ecb"/>
+                                            <Setter Property="Foreground" Value="Black"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="6" Margin="10">
+                        <Image MaxHeight="169" MaxWidth="170" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <Image.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" Value="Resources/ssd_right.jpg"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Source" Value="Resources/ssd.jpg"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                        <TextBlock Text="Kingston SSDNow A400 240GB 2.5 SATAIII 3D" TextWrapping="Wrap" Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="70" FontSize="17" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Foreground" Value="Red"/>
+                                            <Setter Property="TextDecorations" Value="Underline"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Foreground" Value="Black"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="7" Margin="10">
+                        <Image MaxHeight="169" MaxWidth="170" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <Image.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" Value="Resources/asus_pc.png"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Source" Value="Resources/asus_pc.jpg"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                        <TextBlock Text="Компьютер Asus S500MC-5114000380" TextWrapping="Wrap"  Margin="0,239,0,0" HorizontalAlignment="Center" MaxHeight="55" FontSize="17" Visibility = "{Binding FileOkVisible}"
+                            Cursor="Hand">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Foreground" Value="Red"/>
+                                            <Setter Property="TextDecorations" Value="Underline"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Foreground" Value="Black"/>
                                         </Trigger>
                                     </Style.Triggers>
                                 </Style>
