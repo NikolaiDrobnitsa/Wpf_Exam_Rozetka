@@ -23,10 +23,78 @@ namespace Wpf_Exam
                 OnPropertyChanged("PC_Access_Title_Name");
             }
         }
-
-        
-        
-
+        public string PC_Access_SSD
+        {
+            get { return _model.SSD; }
+            set
+            {
+                _model.Title_Name = value;
+                OnPropertyChanged("PC_Access_SSD");
+            }
+        }
+        public string PC_Access_Cooling_systems
+        {
+            get { return _model.Cooling_systems; }
+            set
+            {
+                _model.Title_Name = value;
+                OnPropertyChanged("PC_Access_Cooling_systems");
+            }
+        }
+        public string PC_Access_Video_cards
+        {
+            get { return _model.Video_cards; }
+            set
+            {
+                _model.Title_Name = value;
+                OnPropertyChanged("PC_Access_Video_cards");
+            }
+        }
+        public string PC_Access_RAM
+        {
+            get { return _model.RAM; }
+            set
+            {
+                _model.Title_Name = value;
+                OnPropertyChanged("PC_Access_RAM");
+            }
+        }
+        public string PC_Access_Processors
+        {
+            get { return _model.Processors; }
+            set
+            {
+                _model.Title_Name = value;
+                OnPropertyChanged("PC_Access_Processors");
+            }
+        }
+        public string PC_Access_Motherboards
+        {
+            get { return _model.Motherboards; }
+            set
+            {
+                _model.Title_Name = value;
+                OnPropertyChanged("PC_Access_Motherboards");
+            }
+        }
+        public string PC_Access_Hard_drives
+        {
+            get { return _model.Hard_drives; }
+            set
+            {
+                _model.Title_Name = value;
+                OnPropertyChanged("PC_Access_Hard_drives");
+            }
+        }
+        public string PC_Access_Power_supplies
+        {
+            get { return _model.Power_supplies; }
+            set
+            {
+                _model.Title_Name = value;
+                OnPropertyChanged("PC_Access_Power_supplies");
+            }
+        }
 
 
         public event PropertyChangedEventHandler PropertyChanged;

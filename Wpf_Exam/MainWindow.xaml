@@ -419,7 +419,7 @@
                             <Image Source="Resources/kompyuternye-komplektuyushchie.png" Margin="10,50,10,10"></Image>
                         </Grid>
                         <Grid Grid.Row="1">
-                            <TextBlock Text="Компьютерные комплектующие" Margin="0,0,100,10" TextWrapping="Wrap"  MaxHeight="52" FontSize="20" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="{Binding PC_Access_Title_Name}" Margin="0,0,100,10" TextWrapping="Wrap"  MaxHeight="52" FontSize="20" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -437,7 +437,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="2">
-                            <TextBlock Text="SSD" Margin="0,0,220,10"  MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="{Binding PC_Access_SSD}" Margin="0,0,220,10"  MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -455,7 +455,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="3">
-                            <TextBlock Text="Системы охлаждения" Margin="0,0,70,10" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="{Binding PC_Access_Cooling_systems}" Margin="0,0,70,10" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -473,7 +473,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="4">
-                            <TextBlock Text="Видеокарты"  Margin="0,0,150,10"  MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="{Binding PC_Access_Video_cards}"  Margin="0,0,150,10"  MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -491,7 +491,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="5">
-                            <TextBlock Text="Оперативная память"  Margin="0,0,80,10" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="{Binding PC_Access_RAM}"  Margin="0,0,80,10" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -509,7 +509,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="6">
-                            <TextBlock Text="Процессоры"  Margin="0,0,145,10" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="{Binding PC_Access_Processors}"  Margin="0,0,145,10" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -527,7 +527,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="7">
-                            <TextBlock Text="Материнские платы"  Margin="0,0,85,10" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="{Binding PC_Access_Motherboards}"  Margin="0,0,85,10" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -545,7 +545,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="8">
-                            <TextBlock Text="Жесткие диски и дисковые массивы"  TextWrapping="Wrap" Margin="0,0,30,10" MaxHeight="50" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="{Binding PC_Access_Hard_drives}"  TextWrapping="Wrap" Margin="0,0,30,10" MaxHeight="50" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -563,7 +563,7 @@
                             </TextBlock>
                         </Grid>
                         <Grid Grid.Row="9">
-                            <TextBlock Text="Блок питания"  Margin="0,0,140,10" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
+                            <TextBlock Text="{Binding PC_Access_Power_supplies}"  Margin="0,0,140,10" MaxHeight="25" FontSize="18" Visibility = "{Binding FileOkVisible}"
                             Cursor="Hand">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
